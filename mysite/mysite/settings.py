@@ -134,12 +134,19 @@ else:
 #    os.path.join(BASE_DIR, 'static'),
 #]
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 MEDIA_URL = '/media/'
 
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+#============================================================
+##PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+##MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+#============================================================
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#============================================================
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
