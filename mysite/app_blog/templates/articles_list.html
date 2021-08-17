@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Публікації</title>
-</head>
-<body>
-	Публікації <br/>
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% spaceless %}
 
+<h1>Публікації</h1>
+<br/>
 {% if category %} {{ category }} {% endif %}
 
 {% for item in items %}
@@ -26,5 +24,5 @@
 		<div class='clearfix'></div>
 	</div>
 	{% endfor %}
-</body>
-</html>
+{% endspaceless %}
+{% endblock %}
