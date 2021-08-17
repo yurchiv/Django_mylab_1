@@ -2,13 +2,6 @@ div > h1 {
 	color: #09b3bf;
 }
 
-body > div > div > ol > li {
-	margin: 0 5px;
-}
-
-div.container-image > img {
-width: 100%;
-}
 
 @import
 url('https://fonts.googleapis.com/css?family=Ubuntu');
@@ -20,8 +13,8 @@ url('https://fonts.googleapis.com/css?family=Ubuntu');
 }
 
 body {
-background-image: url('../img/bg.jpg');
-background-repeat: repeat-y;
+	background-image: url('../img/bg.jpg');
+	background-repeat: repeat-y;
 }
 
 div > h1 {
