@@ -10,7 +10,7 @@ from django.conf.urls.static import static
 from .views import (HomePageView, ArticleDetail,
                     ArticleList, ArticleCategoryList)
 urlpatterns = [
-    path(r'', views.HomePageView.as_view()),
+    path(r'', views.HomePageView.as_view(), name='home'),
     path(r'articles', ArticleList.as_view(), name='articles-list'),
     path(r'articles/category/<slug>',
             ArticleCategoryList.as_view(),
