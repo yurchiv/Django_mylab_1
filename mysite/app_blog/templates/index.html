@@ -3,16 +3,18 @@
 {% block content %}
 {% spaceless %}
 
-<h2>Категорії</h2>
 {% if categories %}
-{% for item in categories %}
-<div>
-	<a href="{{ item.get_absolute_url }}">
+<nav class="navbar navbar-default" role="navigation">
+   <div class="container">
+    {% for item in categories %}
+    <a href="{{ item.get_absolute_url }}">
 	<h4>{{ item.category }}</h4>
-	</a>
-</div>
+    </a>
 {% endfor %}
+  </div>
+</nav>
 {% endif %}
+
 {% if articles %}
 {% for item in articles %}
 <div class="article-block">
