@@ -41,12 +41,14 @@ class Article(models.Model):
                                     default=False,
                 help_text=u'Показувати на головній сторінці')
     category = models.ForeignKey(Category,
-                                related_name='articles',
+                                related_name='news',
                                 blank=True,
                                 null=True,
                                 verbose_name=u'Категорія',
                                 on_delete=models.CASCADE)
+
     objects = models.Manager()
+
     class Meta:
         ordering = ['-pub_date']
         verbose_name = u'Стаття'
@@ -75,6 +77,7 @@ class ArticleImage(models.Model):
     title = models.CharField(u'Заголовок', max_length=250,
                             help_text=u'Максимум 250 символів',
                              blank=True)
+
     class Meta:
         verbose_name = u'Фото для статті'
         verbose_name_plural = u'Фото для статті'
