@@ -9,6 +9,7 @@
 	<ol class="breadcrumb">
 		<li><a href="/">Головна</a></li>
 		<li><a href="{% url 'articles-list' %}">Публікації</a></li>
+		<li>{{ item.category }}</li>
 		<li>{{ item.title|upper }}</li>
 	</ol>
 <div>

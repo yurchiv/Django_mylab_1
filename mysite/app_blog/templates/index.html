@@ -3,17 +3,17 @@
 {% block content %}
 {% spaceless %}
 
-<h2>Категорії</h2>
-
-{% if categories %} 
+{% if categories %}
+<nav class="navbar navbar-default" role="navigation">
+<div class="container">
 {% for item in categories %}
-<div>
-   <a href="{{ item.get_absolute_url }}">
-      <h4>{{ item.category }}</h4>
-   </a>
-</div>
+  <a href="{{ item.get_absolute_url }}">
+      <h4>{{ item.category }} {{ item.get_absolute_url }}</h4>
+  </a>
 {% endfor %}
-{% endif %} 
+</div>
+</nav>
+{% endif %}
 {% if articles %}
 {% for item in articles %}
 <div class="article-block">
@@ -22,6 +22,7 @@
    </a>
    <h5>
       {{ item.pub_date|date:"j E Y"|safe|linebreaks }}
+      {{ item.category }}
    </h5>
    <p>
       {{ item.description|safe|escape|striptags|truncatewords_html:32 }}
