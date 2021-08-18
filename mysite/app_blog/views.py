@@ -3,7 +3,7 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, DateDetailView
 
-from .models import Article
+from .models import Article, Category
 
 class HomePageView(TemplateView):
     model = Article
@@ -13,7 +13,7 @@ class HomePageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(HomePageView,
                         self).get_context_data(**kwargs)
-        context['articles'] = \
+        context['articles'] =\
             Article.objects.filter(main_page=True)[:5]
 
         return context
@@ -50,11 +50,11 @@ class ArticleList(ListView):
     def get_context_data(self, *args, **kwargs):
         context = super(ArticleList,
                 self).get_context_data(*args, **kwargs)
+        #==============18_08_2021========
         try:
             context['category'] = Category.objects.get(slug=self.kwargs.get('slug'))
         except Exception:
             context['category'] = None
-
         return context
 
     def get_queryset(self, *args, **kwargs):

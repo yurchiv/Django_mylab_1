@@ -11,7 +11,6 @@ class Category(models.Model):
     category = models.CharField(u'Категорія',
         max_length=250, help_text=u'Максимум 250 символів')
     slug = models.SlugField(u'Слаг')
-    objects = models.Manager()
 
     class Meta:
         verbose_name = u'Категорія для публікації'
