@@ -6,10 +6,8 @@
 <h2>Категорії</h2>
 
 {% if categories %} 
-Ура IF !!!
 {% for item in categories %}
 <div>
-
    <a href="{{ item.get_absolute_url }}">
       <h4>{{ item.category }}</h4>
    </a>

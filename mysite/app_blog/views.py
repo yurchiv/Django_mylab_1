@@ -5,7 +5,7 @@ from django.views.generic import TemplateView, ListView, DateDetailView
 
 from .models import Article, Category
 
-class HomePageView(TemplateView):
+class HomePageView(ListView):
     model = Article
     template_name = 'index.html'
     context_object_name = 'categories'
