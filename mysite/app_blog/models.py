@@ -21,12 +21,13 @@ class Category(models.Model):
         return self.category
 
     def get_absolute_url(self):
-        try:
-            url = reverse('articles-category-list',
-                        kwargs = {'slug': self.slug})
-        except:
-            url = "/"
-        return url
+        #try:
+        #    url = reverse('articles-category-list',
+        #                kwargs={'slug': self.slug })
+        #except:
+        #   url = "/"
+        #return url
+        return reverse('articles-category-list', args=[str(self.id)])
 
 class Article(models.Model):
     title = models.CharField(u'Заголовок', max_length=250,

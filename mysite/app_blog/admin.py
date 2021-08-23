@@ -6,7 +6,7 @@ from .models import Article, ArticleImage, Category
 from .forms import ArticleImageForm
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('category',)
+    list_display = ('category','slug')
     fieldsets = (
         ('', {
             'fields': ('category', ),
@@ -21,7 +21,7 @@ class ArticleImageInline(admin.TabularInline):
 
     fieldsets = (
         ('', {
-            'fields': ('title', 'image',),
+            'fields': ('title', 'image'),
         }),
     )
 
