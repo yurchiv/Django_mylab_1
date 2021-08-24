@@ -6,10 +6,10 @@ from .models import Article, ArticleImage, Category
 from .forms import ArticleImageForm
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('category','slug')
+    list_display = ('category','slug',)
     fieldsets = (
         ('', {
-            'fields': ('category', ),
+            'fields': ('category', 'slug', ),
         }),
     )
 admin.site.register(Category, CategoryAdmin)
@@ -21,7 +21,7 @@ class ArticleImageInline(admin.TabularInline):
 
     fieldsets = (
         ('', {
-            'fields': ('title', 'image'),
+            'fields': ('title', 'image',),
         }),
     )
 

@@ -21,13 +21,13 @@ class Category(models.Model):
         return self.category
 
     def get_absolute_url(self):
-        #try:
-        #    url = reverse('articles-category-list',
-        #                kwargs={'slug': self.slug })
-        #except:
-        #   url = "/"
-        #return url
-        return reverse('articles-category-list', args=[str(self.id)])
+        try:
+            url = reverse('articles-category-list',
+                        kwargs={'slug': self.slug})
+        except:
+            url = "/"
+        return url
+        #return reverse('articles-category-list', args=[str(self.id)])
 
 class Article(models.Model):
     title = models.CharField(u'Заголовок', max_length=250,
@@ -47,15 +47,16 @@ class Article(models.Model):
                                 null=True,
                                 verbose_name=u'Категорія',
                                 on_delete=models.CASCADE)
-
     objects = models.Manager()
 
     class Meta:
         ordering = ['-pub_date']
         verbose_name = u'Стаття'
         verbose_name_plural = u'Статті'
+
     def __str__(self):
         return self.title
+
     def get_absolute_url(self):
         try:
             url = reverse('news-detail',

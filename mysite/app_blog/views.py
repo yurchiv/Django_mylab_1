@@ -66,7 +66,7 @@ class ArticleCategoryList(ArticleList):
 
     def get_queryset(self, *args, **kwargs):
         articles = Article.objects.filter(
-            #category__slug__in=[str(self.id)]).distinct()
             category__slug__in=[self.kwargs['slug']]).distinct()
+
 
         return articles
